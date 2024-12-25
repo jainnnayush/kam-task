@@ -3,7 +3,8 @@ const express= require('express');
 const cors=require('cors');
 const cookieParser=require('cookie-parser');
 const dbConnect = require('./config/database.js');
-const authRoutes = require('./routes/User.js');
+const authRoutes = require('./routes/AuthRoute.js');
+const userRoutes= require('./routes/UserRoutes.js');
 
 const app=express();
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use(cookieParser());
 dbConnect();
 
 app.use('/api/auth',authRoutes);
+app.use('/api/role',userRoutes);
 const PORT=process.env.PORT;
 
 app.listen(PORT,()=>{
