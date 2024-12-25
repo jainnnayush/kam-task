@@ -12,14 +12,14 @@ const userSchema = new Schema({
     required: true, 
     unique: true
   },
-  password_hash: { 
+  password: { 
     type: String, 
     required: true 
   },
   role: { 
     type: String, 
-    enum: ['Admin', 'KAM'], 
-    required: true 
+    enum: ['Admin', 'KAM'],
+    default:'KAM'
   },
   created_at: { 
     type: Date, 
