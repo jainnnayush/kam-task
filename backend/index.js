@@ -14,7 +14,7 @@ app.use(cookieParser());
 dbConnect();
 
 app.use('/api/auth',authRoutes);
-app.use('/api/role',userRoutes);
+app.use('/api/users',userRoutes);
 const PORT=process.env.PORT;
 
 app.listen(PORT,()=>{
